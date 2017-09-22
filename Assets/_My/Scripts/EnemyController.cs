@@ -215,6 +215,14 @@ public class EnemyController : MonoBehaviour
         yield return  anim.Play("Shoot");
 
         yield return new WaitForSeconds(2f);
+        float range = UnityEngine.Random.Range(0.0f, 1.0f);
+        
+        if (range < 0.3f)
+        {
+            PlayerController.instance.BeHit(10);
+            Debug.Log("****被敌人击中");
+        }
+          
         isAttack = false;
     }
 
